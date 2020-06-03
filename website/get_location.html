@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>聯倉-抓取GPS</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <style>
+            .container {
+                height:calc(100vh - 154px - 20vmin);
+                width:100%;
+                text-align:center;
+                overflow-y: auto;
+            }
+            table td {
+                padding: 25px 0px;
+                text-align:left;
+                font-weight:bold;
+                border-bottom:1pt solid black;
+            }
+        </style>
+        <script>
+            function start_gps(){
+                window.location = 'json:{"kind":"get_location","data":"start_gps"}';
+            }
+
+            function stop_gps(){
+                window.location = 'json:{"kind":"get_location","data":"stop_gps"}';
+            }
+
+            $(document).ready(function(){
+                 $("#location_table").empty();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="section">
+            <button class="item" onclick="start_gps();">開始抓取GPS</button>
+            <button class="item" onclick="stop_gps();">停止抓取GPS</button>
+            <div class="container">
+                <table id="location_table" style="width:100%;">
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                    <tr>
+                        <td>緯度：121.3106922<br/>經度：24.9912114<br/>取得時間：2020-06-01 15:37:39</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

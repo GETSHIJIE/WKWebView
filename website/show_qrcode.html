@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>聯倉-顯示QRCode</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            function screen_brightness(Value){
+                window.location = 'json:{"kind":"show_qrcode","brightness":'+Value+'}';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="section">
+            <button class="item" onclick="screen_brightness(100);">開啟螢幕亮度100%</button>
+            <br/>
+            <button class="item" onclick="screen_brightness(50);">恢復螢幕亮度</button>
+            <br/>
+            <br/>
+            <img style="width:100%;" src="img/qrcode.JPG" />
+        </div>
+    </body>
+</html>

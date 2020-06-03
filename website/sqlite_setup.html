@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>聯倉-Sqlite架設</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <style>
+            .container {
+                height:calc(100vh - 154px - 20vmin);
+                width:100%;
+                text-align:center;
+                overflow-y: auto;
+            }
+
+            table td {
+                padding: 25px 0px;
+                border-bottom:1pt solid black;
+                font-weight:bold;
+            }
+        </style>
+        <script>
+            function insert_sqlite(){
+                window.location = 'json:{"kind":"sqlite","data":"insert"}';
+            }
+
+            function search_sqlite(){
+                window.location = 'json:{"kind":"sqlite","data":"search"}';
+            }
+
+            function delete_sqlite(id){
+                window.location = 'json:{"kind":"sqlite","data":{"delete":'+id+'}}';
+            }
+
+            $(document).ready(function(){
+                search_sqlite();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="section">
+            <button class="item" onclick="insert_sqlite();">新增Sqlite資料</button>
+            <button class="item" onclick="search_sqlite();">查詢Sqlite資料</button>
+            <div class="container">
+                <table id="sqlite_table">
+                    <tr>
+                        <td style="width:70%;text-align:left;">{"time":"2020-05-22 16:34:42","中文欄位":"test","亂數":76}</td>
+                        <td style="width:30%"><button class="item" style="padding:10px 10px;">刪除資料</button></td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%;text-align:left;">{"time":"2020-05-22 16:34:42","中文欄位":"test","亂數":76}</td>
+                        <td style="width:30%"><button class="item" style="padding:10px 10px;">刪除資料</button></td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%;text-align:left;">{"time":"2020-05-22 16:34:42","中文欄位":"test","亂數":76}</td>
+                        <td style="width:30%"><button class="item" style="padding:10px 10px;">刪除資料</button></td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%;text-align:left;">{"time":"2020-05-22 16:34:42","中文欄位":"test","亂數":76}</td>
+                        <td style="width:30%"><button class="item" style="padding:10px 10px;">刪除資料</button></td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%;text-align:left;">{"time":"2020-05-22 16:34:42","中文欄位":"test","亂數":76}</td>
+                        <td style="width:30%"><button class="item" style="padding:10px 10px;">刪除資料</button></td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%;text-align:left;">{"time":"2020-05-22 16:34:42","中文欄位":"test","亂數":76}</td>
+                        <td style="width:30%"><button class="item" style="padding:10px 10px;">刪除資料</button></td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%;text-align:left;">{"time":"2020-05-22 16:34:42","中文欄位":"test","亂數":76}</td>
+                        <td style="width:30%"><button class="item" style="padding:10px 10px;">刪除資料</button></td>
+                    </tr>
+                    <tr>
+                        <td style="width:70%;text-align:left;">{"time":"2020-05-22 16:34:42","中文欄位":"test","亂數":76}</td>
+                        <td style="width:30%"><button class="item" style="padding:10px 10px;">刪除資料</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
