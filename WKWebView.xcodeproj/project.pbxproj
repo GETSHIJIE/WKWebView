@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0A385C2489E10B0064B3CA /* ServerAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A385B2489E10B0064B3CA /* ServerAPIModel.swift */; };
+		DE0A385E2489F9BD0064B3CA /* PathMonitorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A385D2489F9BD0064B3CA /* PathMonitorModel.swift */; };
+		DE0A3860248A2DF30064B3CA /* QrCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A385F248A2DF30064B3CA /* QrCodeModel.swift */; };
+		DE0A3864248A37160064B3CA /* Sqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A3863248A37160064B3CA /* Sqlite.swift */; };
+		DE0A3868248A450D0064B3CA /* SQLiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A3867248A450D0064B3CA /* SQLiteController.swift */; };
+		DEBA23B72488BB5700AAFF9C /* LoacationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA23B62488BB5700AAFF9C /* LoacationModel.swift */; };
+		DEBA23B92488CEF000AAFF9C /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA23B82488CEF000AAFF9C /* CameraModel.swift */; };
 		DECC81B9248794CA00447092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC81B8248794CA00447092 /* AppDelegate.swift */; };
 		DECC81BB248794CA00447092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC81BA248794CA00447092 /* SceneDelegate.swift */; };
 		DECC81BD248794CA00447092 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECC81BC248794CA00447092 /* ViewController.swift */; };
@@ -37,6 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE0A385B2489E10B0064B3CA /* ServerAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAPIModel.swift; sourceTree = "<group>"; };
+		DE0A385D2489F9BD0064B3CA /* PathMonitorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathMonitorModel.swift; sourceTree = "<group>"; };
+		DE0A385F248A2DF30064B3CA /* QrCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeModel.swift; sourceTree = "<group>"; };
+		DE0A3862248A36470064B3CA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		DE0A3863248A37160064B3CA /* Sqlite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sqlite.swift; sourceTree = "<group>"; };
+		DE0A3867248A450D0064B3CA /* SQLiteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteController.swift; sourceTree = "<group>"; };
+		DEBA23B62488BB5700AAFF9C /* LoacationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoacationModel.swift; sourceTree = "<group>"; };
+		DEBA23B82488CEF000AAFF9C /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
 		DECC81B5248794CA00447092 /* WKWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECC81B8248794CA00447092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECC81BA248794CA00447092 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE0A3861248A36470064B3CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A3862248A36470064B3CA /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DECC81AC248794C900447092 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +113,7 @@
 				DECC81D1248794CF00447092 /* WKWebViewTests */,
 				DECC81DC248794CF00447092 /* WKWebViewUITests */,
 				DECC81B6248794CA00447092 /* Products */,
+				DE0A3861248A36470064B3CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				DECC81BC248794CA00447092 /* ViewController.swift */,
+				DE0A3867248A450D0064B3CA /* SQLiteController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,6 +171,12 @@
 		DECC81EC248795FE00447092 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE0A3863248A37160064B3CA /* Sqlite.swift */,
+				DEBA23B62488BB5700AAFF9C /* LoacationModel.swift */,
+				DEBA23B82488CEF000AAFF9C /* CameraModel.swift */,
+				DE0A385B2489E10B0064B3CA /* ServerAPIModel.swift */,
+				DE0A385D2489F9BD0064B3CA /* PathMonitorModel.swift */,
+				DE0A385F248A2DF30064B3CA /* QrCodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,10 +313,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0A3860248A2DF30064B3CA /* QrCodeModel.swift in Sources */,
+				DE0A385C2489E10B0064B3CA /* ServerAPIModel.swift in Sources */,
 				DECC81BD248794CA00447092 /* ViewController.swift in Sources */,
+				DEBA23B72488BB5700AAFF9C /* LoacationModel.swift in Sources */,
 				DECC81C3248794CA00447092 /* WKWebView.xcdatamodeld in Sources */,
 				DECC81B9248794CA00447092 /* AppDelegate.swift in Sources */,
+				DE0A3868248A450D0064B3CA /* SQLiteController.swift in Sources */,
 				DECC81BB248794CA00447092 /* SceneDelegate.swift in Sources */,
+				DE0A3864248A37160064B3CA /* Sqlite.swift in Sources */,
+				DEBA23B92488CEF000AAFF9C /* CameraModel.swift in Sources */,
+				DE0A385E2489F9BD0064B3CA /* PathMonitorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
