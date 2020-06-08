@@ -29,9 +29,18 @@ class ViewController: UIViewController {
     var avCaptureSession = AVCaptureSession();
     var previewLayer: AVCaptureVideoPreviewLayer!;
         
-    struct WebViewData: Decodable {
+    //=====================================
+    struct WebViewData: Codable {
         var kind: String;
         var data: String;
+    }
+    
+    struct SqlDelete: Codable {
+        var kind: String;
+        var data: delete;
+    }
+    struct delete: Codable {
+        let delete: Int;
     }
     
     struct Brightness: Decodable {
@@ -45,8 +54,11 @@ class ViewController: UIViewController {
     }
     var auth: Authorization! = Authorization(camera: false, location: false);
     
-    var isPathMonitor: Bool = false;
+    //=====================================
     
+    var isPathMonitor: Bool = false;
+
+    //=====================================
     override func loadView() {
         createWebView();
     }
@@ -206,12 +218,55 @@ class ViewController: UIViewController {
                 if(sqLite.isInsert(data: str)){
                     data = sqLite.fetchData(offset: 0);
                 }
-            }else if(wvData.data == "delete"){
-                
+            }else{
+                let key = wvData.data.components(separatedBy: ":"); //delete:id
+                if(key[0] == "delete"){
+                    sqLite.deleteData(id: Int(key[1])!);
+                    data = sqLite.fetchData(offset: 0);
+                }
             }
             self.sendMsgToWV(msg: self.MegCombination(kind: "sqlite_setup", data: data));
             break;
         
+            
+        //----- background_processing -----
+        case "background_processing":
+            if(wvData.data == "execution"){
+                let semaphore = DispatchSemaphore(value: 1)
+                let queue = DispatchQueue.global()
+                for i in 0..<10000 {
+                    queue.async {
+                        if semaphore.wait(timeout: .distantFuture) == .success {
+                            print(i);
+                            semaphore.signal()
+                        }
+                    }
+                }
+                
+                DispatchQueue.global().async {
+                    for i in 1...100 {
+                        //建立信號
+                        //let semaphore = DispatchSemaphore(value: 0);
+                        if i == 3 {
+                            
+                        } else {
+                            //產生放行信號
+                            //semaphore.signal();
+                        }
+                        
+                        //等待信號
+                        //_ = semaphore.wait(timeout: DispatchTime.distantFuture);
+                        
+                        DispatchQueue.main.async(execute: {
+                            self.sendMsgToWV(msg: self.MegCombination(kind: wvData.kind, data: "\"\(i)%\""));
+                        })
+                        print(i);
+                        sleep(1);
+                    }
+                }
+            }
+            break;
+            
         //----- default -----
         default:
             break;
@@ -310,6 +365,10 @@ extension ViewController: WKNavigationDelegate {
         let decoder = JSONDecoder();
         if let wvData = try? decoder.decode(WebViewData.self, from: data) {
             defineWVData(wvData: wvData);
+        }
+        
+        if let del = try? decoder.decode(SqlDelete.self, from: data){
+            defineWVData(wvData: WebViewData.init(kind: del.kind, data: "delete:\(del.data.delete)"))
         }
         
         if let brightness = try? decoder.decode(Brightness.self, from: data) {

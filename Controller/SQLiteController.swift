@@ -70,7 +70,7 @@ class SQLiteController {
         return jsonString;
     }
     
-    func Delete(id: Int) {
+    func deleteData(id: Int) -> Void {
         _ = db!.delete(self.TableName, cond: "id='\(id)'");
     }
     
